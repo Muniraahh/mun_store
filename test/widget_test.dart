@@ -7,7 +7,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mun_store/app.dart';
 
+// ignore: unused_import
 import 'package:mun_store/main.dart';
 
 void main() {

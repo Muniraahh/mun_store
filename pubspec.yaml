@@ -9,15 +9,15 @@ environment:
   sdk: ^3.6.1
 
 dependencies:
+  flutter_native_splash: ^2.4.4
   flutter:
     sdk: flutter
 
-#Utility Packages
+  #Utility Packages
   http: ^1.1.0
   intl: ^0.20.2
   logger: ^2.0.1
   url_launcher: ^6.1.12
-  flutter_native_splash: ^2.4.4
 
   # iconsax: ^0.0.8
   cupertino_icons: ^1.0.8
@@ -29,11 +29,25 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^5.0.0
+
+# // add this line for setup
+flutter_native_splash:
+  color: "#FFFFFF"
+  color_dark: "#272727"
+  image: assets/logos/mun store_light.png
+  image_dark: assets/logos/mun store_dark.png
+  android_gravity: center
+  android: true
+  ios: true
+  web: false
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/logos/
+    - assets/images/
 
 
 
