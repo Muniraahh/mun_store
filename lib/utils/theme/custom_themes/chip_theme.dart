@@ -4,7 +4,7 @@ class MChipTheme {
   MChipTheme._();
 
   static ChipThemeData lightChipTheme = ChipThemeData(
-    disabledColor: Colors.grey.withAlpha(0.4 as int),
+    disabledColor: Colors.grey.withAlpha((0.4 * 255).toInt()), // Corrected
     labelStyle: const TextStyle(color: Colors.black),
     selectedColor: Colors.indigo[200],
     padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
@@ -12,7 +12,7 @@ class MChipTheme {
   );
 
   static ChipThemeData darkChipTheme = ChipThemeData(
-    disabledColor: Colors.grey.withAlpha(0.4 as int),
+    disabledColor: Colors.grey.withAlpha((0.4 * 255).toInt()), // Corrected
     labelStyle: const TextStyle(color: Colors.white),
     selectedColor: Colors.indigo[200],
     padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),

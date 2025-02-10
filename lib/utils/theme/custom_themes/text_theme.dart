@@ -14,10 +14,10 @@ class MTextTheme {
 
     bodyLarge: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.black),
     bodyMedium: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.black),
-    bodySmall: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.black.withAlpha(0.5 as int)),
+    bodySmall: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.black.withAlpha((0.5 * 255).toInt())), // ✅ Fixed
 
     labelLarge: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: Colors.black),
-    labelMedium: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.w600, color: Colors.black.withAlpha(0.5 as int)),
+    labelMedium: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.w600, color: Colors.black.withAlpha((0.5 * 255).toInt())), // ✅ Fixed
   );
 
   static TextTheme darkTextTheme = TextTheme(
@@ -31,9 +31,9 @@ class MTextTheme {
 
     bodyLarge: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.white),
     bodyMedium: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.white),
-    bodySmall: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.white.withAlpha(0.5 as int)),
+    bodySmall: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.white.withAlpha((0.5 * 255).toInt())), // ✅ Fixed
 
     labelLarge: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: Colors.white),
-    labelMedium: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.w600, color: Colors.white.withAlpha(0.5 as int)),
+    labelMedium: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.w600, color: Colors.white.withAlpha((0.5 * 255).toInt())), // ✅ Fixed
   );
 }
