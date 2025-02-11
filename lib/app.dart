@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:mun_store/utils/feature/authentication/screens/onboarding.dart';
 import 'package:mun_store/utils/theme/theme.dart';
 
 class App extends StatelessWidget {
@@ -6,10 +8,11 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       themeMode: ThemeMode.system,
       theme: MAppTheme.lightTheme,
       darkTheme: MAppTheme.darkTheme,
+      home: OnBoardingScreen(),
     );
   }
 }
