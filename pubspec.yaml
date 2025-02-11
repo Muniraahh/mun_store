@@ -49,6 +49,7 @@ flutter:
     - assets/logos/logo_light.png
     - assets/logos/logo_dark.png
     - assets/images/
+    - assets/images/on_boarding_images/
 
 
 
