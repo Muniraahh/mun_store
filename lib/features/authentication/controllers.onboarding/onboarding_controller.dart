@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mun_store/features/authentication/screens/login/login.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
@@ -8,7 +9,12 @@ class OnBoardingController extends GetxController {
   final PageController pageController = PageController();
 
   // Observable for current page index
-  Rx<int> currentPageIndex = 0.obs;
+  RxInt currentPageIndex = 0.obs;
+
+  /// Update current page index when the user swipes
+  void updatePage(int index) {
+    currentPageIndex.value = index;
+  }
 
   // Update current index when page scrolls
   void updatePageIndex(int index) => currentPageIndex.value = index;
@@ -29,8 +35,7 @@ class OnBoardingController extends GetxController {
         curve: Curves.easeInOut,
       );
     } else {
-      // Navigate to login or home screen
-      // Get.to(LoginScreen());
+      Get.offAll(() => LoginScreen());
     }
   }
 
@@ -39,8 +44,13 @@ class OnBoardingController extends GetxController {
     currentPageIndex.value = 2;
     pageController.animateToPage(
       2,
-      duration: const Duration(milliseconds: 500), // Fixed microseconds issue
+      duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );
+  }
+
+  /// Skip Onboarding and go to login page
+  void skip() {
+    Get.offAll(() => LoginScreen()); // Navigate to login
   }
 }

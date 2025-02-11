@@ -9,22 +9,18 @@ import 'package:mun_store/features/authentication/screens/onboarding/widgets/onb
 import 'package:mun_store/features/authentication/screens/onboarding/widgets/onboarding_next_button.dart';
 
 class OnBoardingScreen extends StatelessWidget {
-  const OnBoardingScreen({super.key});
+  final OnBoardingController controller = Get.put(OnBoardingController()); // ✅ Initialize the controller
 
   @override
   Widget build(BuildContext context) {
-    // Use lazyPut to avoid multiple controller instances
-    final OnBoardingController controller = Get.find<OnBoardingController>();
-
     return Scaffold(
       body: Stack(
-        fit: StackFit.expand, // Ensures proper layout rendering
         children: [
-          // PageView with Controller
-          Positioned.fill( // Fixes ParentDataWidget issue
+          // PageView (Main Content)
+          Positioned.fill(
             child: PageView(
               controller: controller.pageController,
-              onPageChanged: controller.updatePageIndex,
+              onPageChanged: (index) => controller.updatePage(index), // ✅ Update observable
               children: [
                 OnBoardingPage(
                   image: MImages.onBoardingImage1,
@@ -45,24 +41,24 @@ class OnBoardingScreen extends StatelessWidget {
             ),
           ),
 
-          // Skip button (Visible on top)
+          // Skip Button (Top-right)
           Positioned(
             top: 50,
             right: 20,
             child: OnBoardingSkip(),
           ),
 
-          // Smooth page indicator (Centered at the bottom)
+          // Dot Navigation (Centered at bottom)
           Positioned(
-            bottom: 60,
-            left: 0,
+            bottom: 30, // Adjust this if needed
+            left: 20,
             right: 0,
-            child: OnBoardingNavigation(pageController: controller.pageController),
-          ),
+            child: OnBoardingDotNavigation(),
+            ),
 
-          // Next Button (Fixed bottom-right position)
+          // Next Button (Bottom-right)
           Positioned(
-            bottom: 20,
+            bottom: 30,
             right: 20,
             child: OnBoardingNextButton(),
           ),
