@@ -18,6 +18,7 @@ dependencies:
   intl: ^0.20.2
   logger: ^2.0.1
   url_launcher: ^6.1.12
+  smooth_page_indicator: ^1.2.0+3
 
   # iconsax: ^0.0.8
   cupertino_icons: ^1.0.8
@@ -25,6 +26,7 @@ dependencies:
   # State Management
   get: ^4.6.5
   get_storage: ^2.1.1
+  iconsax: ^0.0.8
 
 dev_dependencies:
   flutter_test:
