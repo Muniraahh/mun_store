@@ -15,7 +15,7 @@ class MLoginHeader extends StatelessWidget {
       children: [
         Image(
           height: 150,
-          image: AssetImage(dark ? MImages.lightAppLogo : MImages.darkAppLogo),
+          image: AssetImage(dark ? MImages.darkAppLogo : MImages.lightAppLogo),
         ),
         Text(MTexts.loginTitle, style: Theme
             .of(context)
