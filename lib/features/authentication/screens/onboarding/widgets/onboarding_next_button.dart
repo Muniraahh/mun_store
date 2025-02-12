@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mun_store/utils/constants/sizes.dart';
 import 'package:mun_store/utils/device/device_utility.dart';
-import 'package:mun_store/utils/helpers/helper_functions.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../controllers.onboarding/onboarding_controller.dart';
 
@@ -12,7 +11,6 @@ class OnBoardingNextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = MHelperFunctions.isDarkMode(context);
     return Positioned(
       right: MSizes.defaultSpace,
       bottom: MDeviceUtils.getBottomNavigationBarHeight(),
